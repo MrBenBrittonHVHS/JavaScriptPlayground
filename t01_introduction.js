@@ -1,4 +1,15 @@
+/****************************
+Introduction
+****************************/
+console.log("Running t01_introduction.js")
+
+// Variables
+
+/****************************
+Main Code
+****************************/
 
 
-
-console.log("Running t01_introduction.js");
+/****************************
+Functions
+****************************/

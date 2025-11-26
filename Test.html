@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scroll to Add Paragraphs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Scroll to Add More Content</h1>
+
+  <div id="JavaScriptOutput">
+    <p>This will be replaced</p>
+  </div>
+
+
+<button onClick="start()">START</button>
+
+<form onsubmit="return false;">
+  <label for="nameField">Name:</label>
+  <input type="text" id="userName" name="nameField" placeholder="Name"><br>
+    <label for="ageField">Age:</label>
+  <input type="number" id="userAge" name="ageField"><br>
+  <input type="number" id="choose" name="chooseField"><br>
+
+  <input type="submit" onClick=getFormInput()>
+<br>
+    <input type="text" value="Ms Alice"><br>
+</form>
+<!--
+<form onsubmit="return false;">
+  <input type="text" id="userName">
+  <input type="submit" onClick=getFormInput()>
+</form>
+
+
+<form>
+  <input type="text">
+  <input type="submit">
+</form>
+-->
+  <script src="Test.js"></script>
+
+
+</body>
+</html>

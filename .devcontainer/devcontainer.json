@@ -1,4 +1,4 @@
-// Setup for Y10 web design
+// Setup for all Jr work (including Y11)
 // This defaults to the index.html file and hides all the config files
 // copy the contents into .devcontainer/devcontainer.json
 // .vscode is not needed
@@ -14,12 +14,28 @@
         "vscode": {
             "extensions": [
                 "ritwickdey.LiveServer",  //  Install LiveServer to view pages
-                "vsls-contrib.gitdoc"	// BROKEN Install GitDoc
+                "vsls-contrib.gitdoc"	// GotDoc for auto commits
             ],
             "settings": {
                 "liveServer.settings.donotShowInfoMsg": true,
+                // hide the panel (not useful for HTML/JS development)
+                "workbench.panel.defaultLocation": "bottom",
+                "workbench.panel.opensMaximized": "never",
+                "panel.defaultLocation": "bottom",
+                // Disable AI code suggestions
+                "editor.inlineSuggest.enabled": false,
+                "editor.suggestOnTriggerCharacters": false,
+                "editor.quickSuggestions": {
+                    "other": false,
+                    "comments": false,
+                    "strings": false
+                },                
+                "editor.parameterHints.enabled": false,
+                "editor.acceptSuggestionOnCommitCharacter": false,
+                // Set up autocommit
                 "gitdoc.commitValidationLevel": "none",
                 "gitdoc.enabled": true,
+                // Hide the config files from the UI
                 "files.exclude": {
                     ".devcontainer/*": true,
                     ".devcontainer": true,
