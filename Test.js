@@ -4,7 +4,7 @@ const OUTPUT = document.getElementById("JavaScriptOutput");
 OUTPUT.innerHTML = "Hello world!<br>";
 
 
-/*
+
     function addParagraph() {
       const content = document.getElementById("content");
       const p = document.createElement("p");
@@ -21,7 +21,7 @@ OUTPUT.innerHTML = "Hello world!<br>";
         addParagraph();
       }
     });
-*/
+
 
 /****************************
 Functions
