@@ -1,8 +1,9 @@
 /****************************
-introduction
-Using loops to sing songs
+Introduction
+Using conditionals to make decisions
 ****************************/
-console.log("Running t13_for_loop.js")
+console.log("Running t11_conditionals.js")
+
 
 /****************************
 Variables
@@ -14,10 +15,6 @@ let pocketMoney = 3;
 let answer; // a temporary variable for calculations
 const OUTPUT = document.getElementById("spaceForJavaScriptOutput");// the OUTPUT connects to the webpage
 
-let chocolateRatingList = ["You loath chocolate",
-    "Chocolate is meh",
-    "Chocolate is pretty good",
-    "Chocolate is the best thing EVER!!!!",];
 /****************************
 Main Code
 ****************************/
@@ -28,10 +25,9 @@ Main Code
 Functions
 ****************************/
 
-// Task 12 (updated from Task 11, Task 06)
-// The greetUser function takes four arguments, then displays a personalised welcome message for that user
-// The opinion about chocolate is selected from an array
-function greetUser(_name, _age, _pocketMoney, _userRating) {
+// Task 11 (updated from Task 06)
+// The greetUser function takes three arguments, then displays a personalised welcome message for that user
+function greetUser(_name, _age, _pocketMoney) {
     OUTPUT.innerHTML = "";
 
     OUTPUT.innerHTML += "Hi " + _name + "<br>";
@@ -44,19 +40,16 @@ function greetUser(_name, _age, _pocketMoney, _userRating) {
     _pocketMoney = _pocketMoney / 2;
     OUTPUT.innerHTML += "You spend half of your money, now you have $" + _pocketMoney + "<br>";
     _pocketMoney = _pocketMoney + 3;
-    OUTPUT.innerHTML += "Then you get $3, now you have $" + _pocketMoney + "<br>";
+    OUTPUT.innerHTML += "Then you get $3, now you have $"+ _pocketMoney+"<br>";
 
     // Decide whether the user can afford a chocolate bar
-    if (_pocketMoney >= 4) {
+    if (_pocketMoney >= 4){
         OUTPUT.innerHTML += "A chocolate bar costs $4<br>You CAN afford a chocolate bar<br>"
-    } else {
+    }else{
         OUTPUT.innerHTML += "A chocolate bar costs $4<br>You CANNOT afford a chocolate bar<br>"
     }
-
-    // Display the user's chocolate rating
-    OUTPUT.innerHTML += "You think " + chocolateRatingList[_userRating] + "<br>";
-
 }
+
 
 // Task 8
 // The start function is called when the "Start" button is pressed
@@ -67,7 +60,7 @@ function start() {
     greetUser("Ms Alice", 15, 16);
 }
 
-// Task 12 (updated from task 10, task 9)
+// Task 10 (updated from task 9)
 // The getFormInput function is called when the "Submit" button is pressed
 // It calls the greetUser function with the data from the form to create a personalised message
 function getFormInput() {
@@ -80,24 +73,5 @@ function getFormInput() {
     const FORM_MONEY_FIELD = document.getElementById("userMoney");
     userMoney = Number(FORM_MONEY_FIELD.value);
 
-    const FORM_RATING_FIELD = document.getElementById("chocolateRating");
-    userRating = Number(FORM_RATING_FIELD.value);
-
-    greetUser(userName, userAge, userMoney, userRating);
-}
-
-// Task 13
-// The singSong function is called when the "Sing!" button is pressed
-// It gets the number of verses to sing from the form
-function singSong() {
-    const VERSES_FIELD = document.getElementById("formVerses");
-    let verses = VERSES_FIELD.value;
-
-    //Sing 99 bottles of <age apprpriate beverage> on the wall the number of times specified in the form
-    OUTPUT.innerHTML = "";
-    for (let i = verses; i > 0; i--) {
-        OUTPUT.innerHTML += i + " bottles of &lt;age appropriate beverage&gt; on the wall! <br>";
-        OUTPUT.innerHTML += i + " bottles of &lt;age appropriate beverage&gt;!<br>";
-        OUTPUT.innerHTML += "Take one down, pass it around, " + (i - 1) + " bottles of &lt;age appropriate beverage&gt; on the wall!<br><br>";
-    }
+    greetUser(userName, userAge, userMoney);
 }

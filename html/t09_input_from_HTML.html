@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>T09-Input from HTML</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- stylesheets *******************************************-->
-  <link rel="stylesheet" href="../css/style.css">
+    <title>T09-Input from HTML</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheets *******************************************-->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <!--*************************************************************
   BODY
 **************************************************************-->
+
 <body>
-  <h1>T09 - Input from HTML</h1>
-  <p>Open the console <code>(Ctrl-shift-i)</code> to see any errors.</p>
-  <button onclick="start()">Start</button>
+    <h1>T09 - Input from HTML</h1>
+    <p>Open the console <code>(Ctrl-shift-i)</code> to see any errors.</p>
 
-<form onsubmit="return false;">
-    <label for="nameField">Name:</label>
-    <input type="text" id="userName" name="nameField"><br>
-    <input type="submit" onClick=getFormInput()>
-</form>
+    <!-- Task 08 - Button added -->
+    <button onclick="start()">Start</button>
 
-  <div id="spaceForJavaScriptOutput">
+    <!-- Task 09 form added -->
+    <form onsubmit="return false;">
+        <label for="nameField">Name:</label>
+        <input type="text" id="userName" name="nameField"><br>
+        <input type="submit" onClick=getFormInput()>
+    </form>
 
-    The output of your script will go here.
+    <div id="spaceForJavaScriptOutput">
 
-  </div>
-  <script src="../t09_input_from_HTML.js"></script>
+        The output of your script will go here.
+
+    </div>
+    <script src="../t09_input_from_HTML.js"></script>
 </body>
+
 </html>
 <!--*************************************************************
   END OF T09_INPUT_FROM_HTML.HTML

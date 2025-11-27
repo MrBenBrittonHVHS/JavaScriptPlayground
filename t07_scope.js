@@ -1,24 +1,24 @@
-const output = document.getElementById("output");
+const OUTPUT = document.getElementById("output");
 
 /* Read the slides, make a prediction, then uncomment this code.
 
 
 var myVar = 0;
-output.innerHTML = "Start: "+myVar+"<br>";
+OUTPUT.innerHTML = "Start: "+myVar+"<br>";
 
 functionOne();
 function functionOne() {
   myVar = 1;
-  output.innerHTML += "functionOne: "+myVar+"<br>";
+  OUTPUT.innerHTML += "functionOne: "+myVar+"<br>";
 }
 
 functionTwo();
 function functionTwo() {
   var myVar = 2;
-  output.innerHTML += "functionTwo: "+myVar+"<br>";
+  OUTPUT.innerHTML += "functionTwo: "+myVar+"<br>";
 }
 
-output.innerHTML += "end: "+myVar+"<br>";
+OUTPUT.innerHTML += "end: "+myVar+"<br>";
 
 
 */

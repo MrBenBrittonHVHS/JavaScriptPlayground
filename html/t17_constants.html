@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>T14-Arrays Continued</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- stylesheets *******************************************-->
-    <link rel="stylesheet" href="../css/style.css">
+  <title>T17-Constants</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- stylesheets *******************************************-->
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <!--*************************************************************
   BODY
 **************************************************************-->
-
 <body>
-    <h1>T14 - Arrays Continued</h1>
+  <h1>T17 - Constants</h1>
     <p>Open the console <code>(Ctrl-shift-i)</code> to see any errors.</p>
 
     <!-- Task 08 - Button added -->
     <button onclick="start()">Start</button>
 
+    <!-- Task 15 - Validation & ID  added -->
     <!-- Task 12 - rating field added -->
     <!-- Task 10 - number fields added -->
     <!-- Task 09 form added -->
-    <form onsubmit="return false;">
+    <form id="welcomeForm" onsubmit="return false;">
         <label for="nameField">Name:</label>
-        <input type="text" id="userName" name="nameField"><br>
+        <input type="text" id="userName" name="nameField" required><br>
         <label for="ageField">Age:</label>
-        <input type="number" id="userAge" name="ageField"><br>
+        <input type="number" id="userAge" name="ageField" required min="13" max="99"><br>
         <label for="moneyField">Pocket money:</label>
-        <input type="number" id="userMoney" name="moneyField"><br>
+        <input type="number" id="userMoney" name="moneyField" required><br>
         <label for="ratingField">On a scale of 0-3 how much do you like chocolate?</label>
-        <input type="number" id="chocolateRating" name="ratingField"><br>
+        <input type="number" id="chocolateRating" name="ratingField" required min="0" max="3"><br>
+
         <input type="submit" onClick=getFormInput()>
     </form>
     <br><br>
+
+    <!-- Task 15 - Validation added -->
     <!-- Task 13 - song form added -->
-    <form onsubmit="return false;">
+    <form id="songForm" onsubmit="return false;">
         <label for="versesField">How many verses should I sing?</label>
-        <input type="number" id="formVerses" name="versesField"><br>
+        <input type="number" id="formVerses" name="versesField" required min="1" max="99"><br>
         <input type="submit" onClick=singSong() value="Sing!">
     </form>
     <br><br>
+
+    <!-- Task 15 - Validation added -->
     <!-- Task 14 - shopping form added-->
-    <form onsubmit="return false;">
+    <form id="shoppingForm" onsubmit="return false;">
         <label for="shoppingField">What should I add to the list?</label>
-        <input type="text" id="formshopping" name="shoppingField"><br>
+        <input type="text" id="formshopping" name="shoppingField" required><br>
         <input type="submit" onClick=addToList() value="Add to the list">
         <input type="submit" onClick=displayList() value="Show the list">
     </form>
@@ -56,11 +60,9 @@
         The output of your script will go here.
 
     </div>
-    
-    <script src="../t14_arrays_continued.js"></script>
+  <script src="../t17_constants.js"></script>
 </body>
-
 </html>
 <!--*************************************************************
-  END OF T14_ARRAYS_CONTINUED.HTML
+  END OF T17_CONSTANTS.HTML
 **************************************************************-->
