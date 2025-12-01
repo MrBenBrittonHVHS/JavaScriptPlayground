@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Order System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+    }
+    .container {
+      display: flex;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .menu-section {
+      flex: 1;
+      border: 2px solid #333;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .menu-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .menu-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .menu-list li {
+      padding: 10px;
+      background-color: #f9f9f9;
+      margin: 5px 0;
+      border-left: 4px solid #007bff;
+      cursor: pointer;
+    }
+    .menu-list li:hover {
+      background-color: #e3f2fd;
+    }
+    .order-section {
+      flex: 1;
+      border: 2px solid #333;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    .order-list {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 15px 0;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    .order-item {
+      padding: 8px;
+      background-color: white;
+      margin: 5px 0;
+      border-left: 3px solid #28a745;
+      display: flex;
+      justify-content: space-between;
+    }
+    .receipt-section {
+      border: 3px solid #333;
+      padding: 20px;
+      background-color: #fffacd;
+      border-radius: 5px;
+      display: none;
+      margin-top: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .receipt-section.show {
+      display: block;
+    }
+    .receipt-header {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+    .receipt-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+    }
+    .receipt-total {
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+      padding: 10px 0;
+      margin: 10px 0;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+    .receipt-change {
+      background-color: #90EE90;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #333;
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .button-group input {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+<h3 style="border: solid; border-width: 10px; background-color: yellow;">
+    <img src="demoPage.png" alt="Original page" height="100"><br>
+    Below is the AI response to the task. Starting with the HTML menu blank from test.html and the prompt 
+    <blockquote><i>I have created a rough template for the model project html page. Please fix the html and build a functionla backend. When the "Place order" button is pressed it should show a recipt.</i></blockquote> 
+    it didn't calculate change, it was corrected with the prompt 
+    <blockquote><i>it must calculate change</i></blockquote>
+    The JavaScript uses more complex skills than we cover and does things that were not asked for.<ul>
+    <li>It asks for a number quantity that was not asked for in the brief.</li><li>It uses Alerts - we definitely didn't cover these!
+        </li><li>
+         The push into the order array uses objects more than you would expect.</li><li>
+
+    The recipt uses template literals where we have only taught string concatenation.</li><li>
+    It uses the Date function in JavaScript which we have not covered.</li><li>
+    It allows users to click on the menu items to select them which uses event listeners which is well beyond what we have covered.
+    </li>
+    </ul>
+
+</h3>
+
+<h1 style="text-align: center;">Restaurant Order System</h1>
+
+<div class="container">
+  <!-- Menu Section -->
+  <div class="menu-section">
+    <h2>Menu</h2>
+    <img src="Menu_cropped.jpg" alt="Menu Image" class="menu-image">
+    <ol class="menu-list" id="menuList">
+      <li data-item="1" data-price="12.90">Satay Chicken - $12.90</li>
+      <li data-item="2" data-price="12.90">Hokkien Mee - $12.90</li>
+      <li data-item="3" data-price="12.90">Fried Kuai Teow - $12.90</li>
+      <li data-item="4" data-price="13.90">Combination Noodles - $13.90</li>
+    </ol>
+  </div>
+
+  <!-- Order Section -->
+  <div class="order-section">
+    <h2>Your Order</h2>
+    
+    <form id="orderForm" onsubmit="return false;">
+      <div class="form-group">
+        <label for="nameField">Customer Name:</label>
+        <input type="text" id="nameField" name="nameField" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="menuChoiceField">Select Item (1-4):</label>
+        <input type="number" id="menuChoiceField" name="menuChoiceField" placeholder="Item number" min="1" max="4" required>
+      </div>
+
+      <div class="form-group">
+        <label for="quantityField">Quantity:</label>
+        <input type="number" id="quantityField" name="quantityField" placeholder="Quantity" min="1" max="50" value="1" required>
+      </div>
+
+      <input type="submit" onClick="addToOrder()" value="Add to Order">
+    </form>
+
+    <h3>Current Order:</h3>
+    <div class="order-list" id="orderListDisplay">
+      <p style="color: #999;">No items added yet</p>
+    </div>
+
+    <div class="form-group">
+      <label for="paymentField">Payment Amount ($):</label>
+      <input type="number" id="paymentField" name="paymentField" placeholder="Amount paid" min="0" step="0.01" required>
+    </div>
+
+    <div class="button-group">
+      <input type="submit" onClick="clearOrder()" value="Clear Order">
+      <input type="submit" onClick="placeOrder()" value="Place Order">
+    </div>
+
+    <!-- Receipt -->
+    <div class="receipt-section" id="receiptSection">
+      <div class="receipt-header">*** RECEIPT ***</div>
+      <div id="receiptContent"></div>
+      <input type="submit" onClick="clearReceipt()" value="Close Receipt" style="margin-top: 10px;">
+    </div>
+  </div>
+</div>
+
+<script src="AIModelProject.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Br Model Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<div style="border: solid;display:flex;">
+    <img src="Menu_cropped.jpg" alt="Menu Image" style="width:390px; height:320px;">
+    <div>
+        <div id="menuDisplay">
+        </div>
+        <form id="addItemForm" onsubmit="return false;">
+            <label for="menuChoiceField">Item:</label>
+            <input type="number" id="menuChoice" name="menuChoiceField" placeholder="item" min="0" max="3" required>
+            <input type="submit" onClick=addItem() value="Add to order">
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form id="placeOrderForm" onsubmit="return false;">
+            <label for="nameField">Name:</label>
+            <input type="text" placeholder="name" id="nameField" required><br> <label for="cashGiven">Money:</label>
+            <input type="number" id="cashField" name="cashGiven" placeholder="number" min="0" required><br>
+            <input type="submit" onClick=placeOrder() value="Place order">
+        </form>
+    </div>
+
+</div>
+<div id="receiptDisplay"></div>
+
+<script src="BRModelProject.js"></script>
+
+</body>
+
+</html>

@@ -32,6 +32,32 @@
 <br>
     <input type="text" value="Ms Alice"><br>
 </form>
+<br>
+<br>
+
+<div style="border: solid;display:flex;">
+  <img src="Menu_cropped.jpg" alt="Menu Image" style="width:390px; height:320px;">
+  <div>
+    <ol>
+      <li>Satay Chicken $12.90</li>
+      <li>Hokkien Mee $12.90</li>
+      <li>Fried Kuai Teow $12.90</li>
+      <li>Combination Noodles $13.90</li>
+    </ol>
+    <label for="nameField">Name:</label>
+    <input type="text" placeholder="name" required><br>
+    <label for="menuChoiceField">Item:</label>
+    <input type="number" id="menuChoice" name="menuChoiceField" placeholder="item" min="0" max="3" required>
+    <input type="submit" onClick=getMenuChoice() value="Add to order">
+<br>
+<br>
+<br>
+<br>
+    <label for="quantityField">Money:</label>
+    <input type="number" name = "quantityField" placeholder="number"  min="0" max="300" required><br>
+    <input type="submit" onClick=getMenuChoice() value="Place order">
+  </div>
+</div>
 <!--
 <form onsubmit="return false;">
   <input type="text" id="userName">
