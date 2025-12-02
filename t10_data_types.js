@@ -59,11 +59,11 @@ function getFormInput() {
     const FORM_NAME_FIELD = document.getElementById("userName");
     userName = FORM_NAME_FIELD.value;
 
-    const FORM_AGE_FIELD = document.getElementById("userAge");
-    userAge = Number(FORM_AGE_FIELD.value);
+    const AGE_FIELD = document.getElementById("userAge");
+    userAge = Number(AGE_FIELD.value);
 
-    const FORM_MONEY_FIELD = document.getElementById("userMoney");
-    userMoney = Number(FORM_MONEY_FIELD.value);
+    const MONEY_FIELD = document.getElementById("userMoney");
+    userMoney = Number(MONEY_FIELD.value);
 
     greetUser(userName, userAge, userMoney);
 }

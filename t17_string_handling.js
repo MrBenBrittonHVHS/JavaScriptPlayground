@@ -1,21 +1,22 @@
 /****************************
 Introduction
-Using Objects to store complex data
+String Handling
 ****************************/
-console.log("Running t18 objects.js")
+console.log("Running t16 validation.js")
 
 
 /****************************
 Variables
-****************************/let userName = "Mr Bob";
+****************************/
+let userName = "Mr Bob";
 let userAge = 15;
 let currentYear = 2025;
 let pocketMoney = 3;
 let answer; // a temporary variable for calculations
-const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
 let shoppingList = [];
-let userList = [];
-const CHOCOLATE_RATING_LIST = ["You loath chocolate",
+const OUTPUT = document.getElementById("spaceForJavaScriptOutput");// the OUTPUT connects to the webpage
+
+let chocolateRatingList = ["You loath chocolate",
     "Chocolate is meh",
     "Chocolate is pretty good",
     "Chocolate is the best thing EVER!!!!",];
@@ -55,7 +56,7 @@ function greetUser(_name, _age, _pocketMoney, _userRating) {
     }
 
     // Display the user's chocolate rating
-    OUTPUT.innerHTML += "You think " + CHOCOLATE_RATING_LIST[_userRating] + "<br>";
+    OUTPUT.innerHTML += "You think " + chocolateRatingList[_userRating] + "<br>";
 
 }
 
@@ -68,48 +69,29 @@ function start() {
     greetUser("Ms Alice", 15, 16);
 }
 
-// Task 18 (updated from task 12, task 10, task 9)
+// Task 17 (updated from Task 16, Task 12, task 10, task 9)
 // The getFormInput function is called when the "Submit" button is pressed
 // It calls the greetUser function with the data from the form to create a personalised message
-// It also creates a user object and adds it to the userList array
+// But only if the form is valid
 function getFormInput() {
-
-    let welcomeForm = document.getElementById("welcomeForm");
-
+    const WELCOME_FORM = document.getElementById("welcomeForm");
     const FORM_NAME_FIELD = document.getElementById("userName");
     userName = FORM_NAME_FIELD.value;
-        
-    if (welcomeForm.checkValidity() === false) {
+    userName = userName.trim();//Get rid of whitespace around the name
+    if (WELCOME_FORM.checkValidity() === false||userName.length<3) {
         OUTPUT.innerHTML = "Please fill out all fields correctly.<br>";
-    } else{
+    } else {
         // process the form normally...
-        const FORM_AGE_FIELD = document.getElementById("userAge");
-        userAge = Number(FORM_AGE_FIELD.value);
+        const AGE_FIELD = document.getElementById("userAge");
+        userAge = Number(AGE_FIELD.value);
 
-        const FORM_MONEY_FIELD = document.getElementById("userMoney");
-        userMoney = Number(FORM_MONEY_FIELD.value);
+        const MONEY_FIELD = document.getElementById("userMoney");
+        userMoney = Number(MONEY_FIELD.value);
 
-        const FORM_RATING_FIELD = document.getElementById("chocolateRating");
-        userRating = Number(FORM_RATING_FIELD.value);
+        const RATING_FIELD = document.getElementById("chocolateRating");
+        userRating = Number(RATING_FIELD.value);
 
         greetUser(userName, userAge, userMoney, userRating);
-        userList.push(
-            {
-            name: userName,
-            age: userAge,
-            money: userMoney,
-            rating: userRating
-        });
-    }
-}
-
-// Task 18
-// The welcomeUsers function is called when the "Welcome" button is pressed
-// It displays all users who have signed up so far and their details
-function welcomeUsers() {
-    OUTPUT.innerHTML = "Welcome to the site! Here are the users who have signed up so far:<br>";
-    for (let i = 0; i < userList.length; i++) {
-        OUTPUT.innerHTML += "Name: " + userList[i].name + ", Age: " + userList[i].age + ", Money: $" + userList[i].money + ", Chocolate Rating: " + CHOCOLATE_RATING_LIST[userList[i].rating] + "<br>";
     }
 }
 

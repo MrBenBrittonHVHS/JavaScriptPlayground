@@ -58,12 +58,23 @@
     <input type="submit" onClick=getMenuChoice() value="Place order">
   </div>
 </div>
-<!--
+
 <form onsubmit="return false;">
-  <input type="text" id="userName">
+  <input type="text" id="nameField">
   <input type="submit" onClick=getFormInput()>
 </form>
 
+<form onsubmit="return false;">
+  <label for="formName">Name:</label>
+  <input type="number" id="ageField">
+  <input type="number" id="ageField" min="13" max="99">
+
+  <input type="text" id="nameField" name="formName" value="Ms Alice">
+  <input type="text" id="nameField" name="formName" placeHolder="Name">
+  <input type="text" id="nameField" name="formName">
+  <input type="submit" onClick=getFormInput()>
+</form>
+<!--
 
 <form>
   <input type="text">

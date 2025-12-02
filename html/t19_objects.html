@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>T18_objects</title>
+  <title>t19_objects</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- stylesheets *******************************************-->
   <link rel="stylesheet" href="../css/style.css">
 </head>
-
-<!--*************************************************************
-  BODY
-**************************************************************-->
 <body>
-  <h1>T18 - Objects</h1>
+  <h1>t19 - Objects</h1>
+  <p>Open the console (Ctrl-Shift-I) to see outputs and errors.</p>
+  <h1>T17 - String handling</h1>
     <p>Open the console <code>(Ctrl-shift-i)</code> to see any errors.</p>
 
     <!-- Task 08 - Button added -->
     <button onclick="start()">Start</button>
 
-    <!-- Task 18 - welcome button added -->
-    <!-- Task 15 - Validation & ID added -->
+    <!-- Task 15 - Validation & ID  added -->
     <!-- Task 12 - rating field added -->
     <!-- Task 10 - number fields added -->
     <!-- Task 09 form added -->
-           <form id="welcomeForm" onsubmit="return false;">
+    <form id="welcomeForm" onsubmit="return false;">
         <label for="nameField">Name:</label>
         <input type="text" id="userName" name="nameField" required><br>
         <label for="ageField">Age:</label>
@@ -35,9 +30,8 @@
         <input type="number" id="chocolateRating" name="ratingField" required min="0" max="3"><br>
 
         <input type="submit" onClick=getFormInput()>
-        <input type="submit" onClick=welcomeUsers() value="Welcome">
     </form>
-<br>
+    <br><br>
 
     <!-- Task 15 - Validation added -->
     <!-- Task 13 - song form added -->
@@ -56,15 +50,10 @@
         <input type="submit" onClick=addToList() value="Add to the list">
         <input type="submit" onClick=displayList() value="Show the list">
     </form>
-    <br>   
-  <div id="spaceForJavaScriptOutput">
+    <br>
 
-    The output of your script will go here.
+  <div id="spaceForJavaScriptOutput">The output of your script will go here.</div>
 
-  </div>
-  <script src="../t18_objects.js"></script>
+  <script src="../t19_objects.js"></script>
 </body>
 </html>
-<!--*************************************************************
-  END OF T18_objects.HTML
-**************************************************************-->

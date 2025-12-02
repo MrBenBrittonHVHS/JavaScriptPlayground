@@ -29,8 +29,8 @@ const MENU_PRICES = [
 const MENU_DISPLAY = document.getElementById("menuDisplay");
 const RECEIPT_DISPLAY = document.getElementById("receiptDisplay");
 const MENU_CHOICE = document.getElementById("menuChoice");
-const CASH_INPUT = document.getElementById("cashField");
-const NAME_INPUT = document.getElementById("nameField");
+const CASH_FIELD = document.getElementById("cashField");
+const NAME_FIELD = document.getElementById("nameField");
 const ORDER_FORM = document.getElementById("placeOrderForm");
 
 // Display the menu from the menu array
@@ -62,8 +62,8 @@ function placeOrder() {
   // If the form is not valid, do not add to the order
     RECEIPT_DISPLAY.innerHTML = "";
     var total = 0;
-    var cash = CASH_INPUT.value;
-    var name = NAME_INPUT.value;
+    var cash = CASH_FIELD.value;
+    var name = NAME_FIELD.value;
 
     RECEIPT_DISPLAY.innerHTML += "Welcome " + name + " Thanks for your order<br>"
 
@@ -94,8 +94,8 @@ function placeOrder() {
       RECEIPT_DISPLAY.innerHTML += "Change: $" + change + "<br><br><br>";
       RECEIPT_DISPLAY.innerHTML += "Please make another order<br>";
       order = [];
-      CASH_INPUT.value = '';
-      NAME_INPUT.value = '';
+      CASH_FIELD.value = '';
+      NAME_FIELD.value = '';
     }
   }
 }

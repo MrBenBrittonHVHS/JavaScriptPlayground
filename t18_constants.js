@@ -1,8 +1,8 @@
 /****************************
 Introduction
-Validation - Use HTML Form Validation
+Constants, variables and naming conventions
 ****************************/
-console.log("Running t16 validation.js")
+console.log("Running t17 constants.js")
 
 
 /****************************
